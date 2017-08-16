@@ -20,5 +20,9 @@ module.exports = {
       { test: /\.scss$/, loader: 'sass-loader', exclude: /node_modules/ }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [HtmlWebpackPluginConfig],
+  devServer: {
+    historyApiFallback: true,
+    contentBase: './'
+  }
 }
