@@ -1,9 +1,19 @@
 import React from 'react'
 import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { Router } from 'react-router'
+
+import store from './reducers'
+import Routes from './routes'
+import history from './routes/history'
 
 render(
   (
-    <div>Hello World!</div>
+    <Provider store={store}>
+      <Router history={history}>
+        <Routes />
+      </Router>
+    </Provider>
   ),
-  document.querySelector('#root')
+  document.getElementById('root')
 )
