@@ -1,0 +1,33 @@
+{
+  "name": "banker",
+  "version": "0.1.0",
+  "description": "React powered tiny \"personal accounting\" app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolasThebaud/Banker.git"
+  },
+  "author": "Nicolas Thebaud",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NicolasThebaud/Banker/issues"
+  },
+  "homepage": "https://github.com/NicolasThebaud/Banker#readme",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "path": "^0.12.7",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
