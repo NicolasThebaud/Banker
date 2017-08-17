@@ -1,9 +1,9 @@
 import { combineReducers, createStore } from 'redux'
 
-import { appContainer } from '../containers/AppContainer'
+import { appContainerReducer } from '../containers/AppContainer'
 
 const rootReducer = combineReducers({
-	appContainer
+	appContainer: appContainerReducer
 })
 
 export default createStore(rootReducer)
