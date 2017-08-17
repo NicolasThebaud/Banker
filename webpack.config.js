@@ -17,7 +17,7 @@ module.exports = {
     loaders: [
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.scss$/, loader: 'sass-loader', exclude: /node_modules/ }
+      { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'], exclude: /node_modules/ }
     ]
   },
   plugins: [HtmlWebpackPluginConfig],
@@ -29,7 +29,8 @@ module.exports = {
     alias: {
       containers: path.resolve(__dirname, 'src/containers'),
       components: path.resolve(__dirname, 'src/components'),
-      routes: path.resolve(__dirname, 'src/routes')
+      routes: path.resolve(__dirname, 'src/routes'),
+      themes: path.resolve(__dirname, 'src/themes')
     }
   }
 }

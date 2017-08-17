@@ -1,0 +1,27 @@
+@import '_colors.scss';
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: $main;
+  color: $main_text;
+}
+
+.dropzone {
+  &>div {
+    outline: none;
+    height: 80vh !important;
+    width:  80vw !important;
+    margin: 5vh 7.5vw;
+    border: 5vh dashed #ddd !important;
+    background: transparent;
+    cursor: default;
+  }
+
+  & p {
+    position: relative;
+    top: calc(50% - 2em);
+    font-size: 4em;
+    text-align: center;
+    font-variant: small-caps;
+  }
+}

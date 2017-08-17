@@ -7,6 +7,8 @@ import store from './reducers'
 import Routes from './routes'
 import history from './routes/history'
 
+import 'themes/main.scss'
+
 render(
   (
     <Provider store={store}>
