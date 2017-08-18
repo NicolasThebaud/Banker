@@ -1,9 +1,21 @@
 @import '_colors.scss';
 
 body {
+  overflow: hidden;
+  overflow-y: auto;
   font-family: "Roboto", sans-serif;
   background-color: $main;
   color: $main_text;
+}
+
+/*TODO
+* Mixin custom scrollbar
+*/
+
+.section-title {
+  font-size: 2em;
+  font-variant: small-caps;
+  font-weight: lighter;
 }
 
 .dropzone {
@@ -19,9 +31,45 @@ body {
 
   & p {
     position: relative;
-    top: calc(50% - 2em);
+    top: 50%;
+    margin-top: -1em;
     font-size: 4em;
     text-align: center;
     font-variant: small-caps;
+  }
+}
+
+.overview {
+  margin: 5vh;
+  padding: .5em;
+  border: 1px solid $black;
+  background-color: $white;
+  max-height: 50vh;
+  overflow-y: auto !important;
+
+  /* TODO make title sticky
+  * ie. better scroll
+  */
+
+  &::-webkit-scrollbar {
+      width: 5px;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      -webkit-box-shadow: inset 0 0 5px $main;
+      background-color: $main;
+    }
+
+  & .table-responsive {
+    &::-webkit-scrollbar {
+      height: 5px;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      -webkit-box-shadow: inset 0 0 5px $main;
+      background-color: $main;
+    }
   }
 }
