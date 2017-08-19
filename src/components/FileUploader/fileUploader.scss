@@ -1,0 +1,20 @@
+.dropzone {
+  &>div {
+    outline: none;
+    height: 80vh !important;
+    width:  80vw !important;
+    margin: 10vh 10vw;
+    border: 5vh dashed #ddd !important;
+    background: transparent;
+    cursor: default;
+  }
+
+  & p {
+    position: relative;
+    top: 50%;
+    margin-top: -1em;
+    font-size: 4em;
+    text-align: center;
+    font-variant: small-caps;
+  }
+}

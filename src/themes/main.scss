@@ -1,5 +1,10 @@
 @import '_colors.scss';
 
+@import '../containers/OverviewContainer/overviewContainer';
+
+@import '../components/FileUploader/fileUploader';
+@import '../components/Sidebar/sidebar';
+
 body {
   overflow: hidden;
   overflow-y: auto;
@@ -8,80 +13,8 @@ body {
   color: $main_text;
 }
 
-@mixin fancy-scrollbar($width, $height) {
-  &::-webkit-scrollbar {
-    width: $width;
-    height: $height;
-    background-color: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    -webkit-box-shadow: inset 0 0 5px $main;
-    background-color: $main;
-  }
-}
-
 .section-title {
   font-size: 2em;
   font-variant: small-caps;
   font-weight: lighter;
-}
-
-.dropzone {
-  &>div {
-    outline: none;
-    height: 80vh !important;
-    width:  80vw !important;
-    margin: 10vh 10vw;
-    border: 5vh dashed #ddd !important;
-    background: transparent;
-    cursor: default;
-  }
-
-  & p {
-    position: relative;
-    top: 50%;
-    margin-top: -1em;
-    font-size: 4em;
-    text-align: center;
-    font-variant: small-caps;
-  }
-}
-
-.overview-container .section-title {
-  margin-top: 5vh;
-  margin-left: 6vw;
-}
-
-.overview {
-  @include fancy-scrollbar(5px, auto);
-  margin: 0 2vw 0 6vw;
-  padding: .5em;
-  border: 1px solid $black;
-  background-color: $white;
-  max-height: 50vh;
-  overflow-y: auto !important;
-
-  & .table-responsive {
-    @include fancy-scrollbar(auto, 5px);
-  }
-}
-
-.sb-container {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 100;
-  cursor: pointer;
-  background-color: $white;
-  width: 4vw;
-  height: 100vw;
-  padding: 1vw;
-  border-right: 1px solid $black;
-
-  & .glyphicon {
-    width: 100%;
-    font-size: 2vw;
-    margin-bottom: .5em;
-  }
 }
