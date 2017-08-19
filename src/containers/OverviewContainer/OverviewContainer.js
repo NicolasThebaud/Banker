@@ -16,30 +16,18 @@ class OverviewContainer extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {
-      parsedHeader: null,
-      parsedBody: null
-    }
+    this.state = { parsedData: null }
   }
 
   componentWillMount() {
     const { fileData } = this.props
 
     if (!fileData) history.push('/')
-    else {
-      const table = parseCsv(fileData)
-      this.setState({
-        parsedHeader: table[0],
-        parsedBody: table.slice(1)
-      })
-    }
+    else this.setState({ parsedData: parseCsv(fileData) })
   }
 
   render() {
-    const {
-      parsedHeader,
-      parsedBody
-    } = this.state
+    const { parsedData } = this.state
 
     return (
       <section className="overview-container">
@@ -49,10 +37,7 @@ class OverviewContainer extends Component {
           <Col xs={12}>
             <p className="section-title">Data preview</p>
             <section className="overview">
-              <Overview
-                header={parsedHeader}
-                body={parsedBody}
-              />
+              <Overview data={parsedData} />
             </section>
           </Col>
         </Row>
