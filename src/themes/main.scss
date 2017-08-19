@@ -8,9 +8,18 @@ body {
   color: $main_text;
 }
 
-/*TODO
-* Mixin custom scrollbar
-*/
+@mixin fancy-scrollbar($width, $height) {
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $height;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 5px $main;
+    background-color: $main;
+  }
+}
 
 .section-title {
   font-size: 2em;
@@ -45,6 +54,7 @@ body {
 }
 
 .overview {
+  @include fancy-scrollbar(5px, auto);
   margin: 0 2vw 0 6vw;
   padding: .5em;
   border: 1px solid $black;
@@ -52,26 +62,8 @@ body {
   max-height: 50vh;
   overflow-y: auto !important;
 
-  &::-webkit-scrollbar {
-      width: 5px;
-      background-color: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      -webkit-box-shadow: inset 0 0 5px $main;
-      background-color: $main;
-    }
-
   & .table-responsive {
-    &::-webkit-scrollbar {
-      height: 5px;
-      background-color: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      -webkit-box-shadow: inset 0 0 5px $main;
-      background-color: $main;
-    }
+    @include fancy-scrollbar(auto, 5px);
   }
 }
 
