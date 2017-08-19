@@ -1,5 +1,6 @@
 import {
-  FILE_UPLOADED
+  FILE_UPLOADED,
+  RESET_UPLOAD
 } from './action-types'
 
 export function handleFile(data) {
@@ -7,4 +8,8 @@ export function handleFile(data) {
     type: FILE_UPLOADED,
     payload: data
   }
+}
+
+export function resetUpload() {
+  return { type: RESET_UPLOAD }
 }

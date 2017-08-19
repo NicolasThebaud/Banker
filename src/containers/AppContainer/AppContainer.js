@@ -19,9 +19,7 @@ class AppContainer extends Component {
   }
 
   render() {
-    const {
-      fileData
-    } = this.props
+    const { fileData } = this.props
 
     return (
       <main>
