@@ -23,7 +23,7 @@ body {
     outline: none;
     height: 80vh !important;
     width:  80vw !important;
-    margin: 5vh 7.5vw;
+    margin: 10vh 10vw;
     border: 5vh dashed #ddd !important;
     background: transparent;
     cursor: default;
@@ -39,17 +39,18 @@ body {
   }
 }
 
+.overview-container .section-title {
+  margin-top: 5vh;
+  margin-left: 6vw;
+}
+
 .overview {
-  margin: 5vh;
+  margin: 0 2vw 0 6vw;
   padding: .5em;
   border: 1px solid $black;
   background-color: $white;
   max-height: 50vh;
   overflow-y: auto !important;
-
-  /* TODO make title sticky
-  * ie. better scroll
-  */
 
   &::-webkit-scrollbar {
       width: 5px;
@@ -71,5 +72,24 @@ body {
       -webkit-box-shadow: inset 0 0 5px $main;
       background-color: $main;
     }
+  }
+}
+
+.sb-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  cursor: pointer;
+  background-color: $white;
+  width: 4vw;
+  height: 100vw;
+  padding: 1vw;
+  border-right: 1px solid $black;
+
+  & .glyphicon {
+    width: 100%;
+    font-size: 2vw;
+    margin-bottom: .5em;
   }
 }
