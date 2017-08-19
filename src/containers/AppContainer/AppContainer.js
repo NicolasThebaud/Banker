@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import history from 'routes/history'
 
 import FileUploader from 'components/FileUploader'
-import DataOverview from 'components/DataOverview'
 
 import {
   getFileData
@@ -15,18 +14,18 @@ class AppContainer extends Component {
     super(props)
   }
 
+  componentWillReceiveProps({ fileData }) {
+    if (fileData) history.push('/overview')
+  }
+
   render() {
     const {
       fileData
     } = this.props
-    console.log(fileData)
 
     return (
       <main>
-        { (!fileData)
-          ? (<FileUploader />)
-          : (<DataOverview rawData={fileData} />)
-        }
+        <FileUploader />
       </main>
     )
   }
