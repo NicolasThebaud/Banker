@@ -6,6 +6,7 @@ import history from 'routes/history'
 import parseCsv from 'services/parser'
 
 import ComputedContainer from 'containers/ComputedContainer'
+import GraphContainer from 'containers/GraphContainer'
 
 import Overview from 'components/Overview'
 import Sidebar from 'components/Sidebar'
@@ -43,9 +44,8 @@ class OverviewContainer extends Component {
             </section>
           </Col>
 
-          <Col xs={12} md={6}>
-            <ComputedContainer />
-          </Col>
+          <Col xs={12} md={6}><ComputedContainer /></Col>
+          <Col xs={12} md={6}><GraphContainer /></Col>
         </Row>
       </section>
     )

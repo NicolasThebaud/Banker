@@ -25,6 +25,7 @@ class Sidebar extends Component {
       <section className="sb-container">
         <Icon icon="upload" tooltip={'Upload a new file'} action={this.resetFile} />
         <Icon icon="gears" tooltip={'Compute value'} action={this.props.addComputedValue} />
+        <Icon icon="tachometer" tooltip={'Generate graph'} action={() => {}} />
       </section>
     )
   }
