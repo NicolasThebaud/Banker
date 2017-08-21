@@ -28,4 +28,8 @@
   & .table-responsive {
     @include fancy-scrollbar(auto, 5px);
   }
+
+  & td.active {
+    border: 2px dashed $blue;
+  }
 }

@@ -1,33 +1,35 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Grid, Row, Col } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import history from 'routes/history'
-import parseCsv from 'services'
+import parseCsv from 'services/parser'
+
+import ComputedContainer from 'containers/ComputedContainer'
 
 import Overview from 'components/Overview'
 import Sidebar from 'components/Sidebar'
 
+import { setParsedData } from 'containers/AppContainer/actions'
 import {
-  getFileData
+  getFileData,
+  getParsedData
 } from 'containers/AppContainer/selectors'
 
 class OverviewContainer extends Component {
   constructor(props) {
     super(props)
-
-    this.state = { parsedData: null }
   }
 
   componentWillMount() {
-    const { fileData } = this.props
+    const { fileData, setParsedData } = this.props
 
     if (!fileData) history.push('/')
-    else this.setState({ parsedData: parseCsv(fileData) })
+    else setParsedData(parseCsv(fileData))
   }
 
   render() {
-    const { parsedData } = this.state
+    const { parsedData } = this.props
 
     return (
       <section className="overview-container">
@@ -40,6 +42,10 @@ class OverviewContainer extends Component {
               <Overview data={parsedData} />
             </section>
           </Col>
+
+          <Col xs={12} md={6}>
+            <ComputedContainer />
+          </Col>
         </Row>
       </section>
     )
@@ -47,7 +53,8 @@ class OverviewContainer extends Component {
 }
 
 OverviewContainer.propTypes = {
-  rawData: PropTypes.string
+  rawData: PropTypes.string,
+  setParsedData: PropTypes.func.isRequired
 }
 
 OverviewContainer.defaultProps = {
@@ -55,10 +62,13 @@ OverviewContainer.defaultProps = {
 }
 
 const mapStateToProps = state => ({
-  fileData: getFileData(state)
+  fileData: getFileData(state),
+  parsedData: getParsedData(state)
 })
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = {
+  setParsedData
+}
 
 export default connect(
   mapStateToProps,

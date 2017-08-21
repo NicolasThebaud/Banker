@@ -1,0 +1,42 @@
+.computed-container {
+  margin-top: 5vh;
+  margin-left: 6vw;
+}
+
+.c {
+  &-value {
+    background-color: $white;
+    border: 1px solid $black;
+    padding: .5em;
+
+    & .fa {
+      cursor: pointer;
+      margin-left: 5px;
+
+      &.c-delete { float: right; }
+    }
+
+    & .icons {
+      display: inline-block;
+      width: 100%;
+      text-align: right;
+      padding-right: 5px;
+      cursor: pointer;
+    }
+  }
+
+  &-title {
+    font-weight: bold;
+    font-variant: small-caps;
+    margin-bottom: 0;
+  }
+
+  &-result {
+    margin: 0;
+    font-size: 2em;
+    text-align: right;
+  }
+
+  &-green { color: $green; }
+  &-red { color: $red; }
+}

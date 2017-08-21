@@ -5,9 +5,8 @@ import history from 'routes/history'
 
 import Icon from './Icon'
 
-import {
-  resetUpload
-} from 'containers/AppContainer/actions'
+import { resetUpload } from 'containers/AppContainer/actions'
+import { addComputedValue } from 'containers/ComputedContainer/actions'
 
 class Sidebar extends Component {
   constructor(props) {
@@ -25,19 +24,22 @@ class Sidebar extends Component {
     return (
       <section className="sb-container">
         <Icon icon="upload" tooltip={'Upload a new file'} action={this.resetFile} />
+        <Icon icon="gears" tooltip={'Compute value'} action={this.props.addComputedValue} />
       </section>
     )
   }
 }
 
 Sidebar.propTypes = {
-  resetUpload: PropTypes.func.isRequired
+  resetUpload: PropTypes.func.isRequired,
+  addComputedValue: PropTypes.func.isRequired
 }
 
 const mapStateToProps = () => ({})
 
 const mapDispatchToProps = {
-  resetUpload
+  resetUpload,
+  addComputedValue
 }
 
 export default connect(
